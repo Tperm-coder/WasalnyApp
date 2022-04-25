@@ -6,9 +6,39 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/20112/Desktop/untitled3/main.cpp
+C:/Users/20112/Desktop/wasalny/graphStructure/Edge.h
+Node.h
+C:/Users/20112/Desktop/wasalny/graphStructure/Node.h
+Graph.h
+C:/Users/20112/Desktop/wasalny/graphStructure/Graph.h
+bits/stdc++.h
+-
+
+C:/Users/20112/Desktop/wasalny/graphStructure/Graph.cpp
+Graph.h
+C:/Users/20112/Desktop/wasalny/graphStructure/Graph.h
+
+C:/Users/20112/Desktop/wasalny/graphStructure/Graph.h
+Node.h
+C:/Users/20112/Desktop/wasalny/graphStructure/Node.h
+Edge.h
+C:/Users/20112/Desktop/wasalny/graphStructure/Edge.h
+bits/stdc++.h
+-
+
+C:/Users/20112/Desktop/wasalny/graphStructure/Node.h
+Edge.h
+C:/Users/20112/Desktop/wasalny/graphStructure/Edge.h
+Graph.h
+C:/Users/20112/Desktop/wasalny/graphStructure/Graph.h
+bits/stdc++.h
+-
+
+C:/Users/20112/Desktop/wasalny/main.cpp
 bits/stdc++.h
 -
 fstream
 -
+graphStructure/Graph.cpp
+C:/Users/20112/Desktop/wasalny/graphStructure/Graph.cpp
 
