@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #include <fstream>
-#include "graphStructure/Graph.cpp"
+#include "graphStructure/Graph.h"
 
 using namespace std;
 const string fixed_file_path = "../dataLayer/UsersInfo/"; // relative to the exe file
@@ -125,8 +125,9 @@ Graph get_user_graph(string user_id , string graph_id )
 
     csv_string_to_map(splitted_graph,graph_string);
 
-    bool isDirected = (bool)str_to_int(splitted_graph[1][1]);
-    bool isWeighted = (bool)str_to_int(splitted_graph[1][2]);
+    bool isDirected = false, isWeighted = false;
+    isDirected = (bool)str_to_int(splitted_graph[1][1]);
+    isWeighted = (bool)str_to_int(splitted_graph[1][2]);
 
     int nodes_num = str_to_int(splitted_graph[2][1]);
     int edges_num = str_to_int(splitted_graph[2][2]); //useless
@@ -137,10 +138,10 @@ Graph get_user_graph(string user_id , string graph_id )
 
     for (int i = 3 ; i <=  2 + nodes_num ; i++)
     {
-        cout << splitted_graph[i][1] << ' ' << splitted_graph[i][2] << endl;
         Node fromNode = Node(splitted_graph[i][1]);
         Node toNode = Node(splitted_graph[i][2]);
-
+        user_graph.addNode(fromNode);
+        user_graph.addNode(toNode);
         if (isWeighted)
         {
             Edge curr_edge = Edge(&fromNode,&toNode,str_to_int(splitted_graph[i][3]));
@@ -160,6 +161,6 @@ Graph get_user_graph(string user_id , string graph_id )
 
 int main()
 {
-    get_user_graph("Admin" , "graphName");
+    Graph g = get_user_graph("Admin" , "graphName");
     return 0;
 }
