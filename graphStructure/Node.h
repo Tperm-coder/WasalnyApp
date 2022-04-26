@@ -3,6 +3,7 @@
 #include "Graph.h"
 #include <bits/stdc++.h>
 using namespace std;
+class Node;
 
 class Node{
 public:
