@@ -1,4 +1,5 @@
-/home/hazem/clion-2021.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /media/hazem/projects/wasalny -B /media/hazem/projects/wasalny/cmake-build-debug
+"D:\CLion 2020.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\20112\Desktop\wasalny
+-- Found SFML 2.5.1 in C:/SFML/lib/cmake/SFML
 -- Configuring done
 -- Generating done
--- Build files have been written to: /media/hazem/projects/wasalny/cmake-build-debug
+-- Build files have been written to: C:/Users/20112/Desktop/wasalny/cmake-build-debug

@@ -1,13 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o"
-  "CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o.d"
-  "CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o"
-  "CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o.d"
-  "CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o"
-  "CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o.d"
-  "CMakeFiles/untitled3.dir/main.cpp.o"
-  "CMakeFiles/untitled3.dir/main.cpp.o.d"
-  "untitled3"
+  "CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.obj"
+  "CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.obj"
+  "CMakeFiles/untitled3.dir/graphStructure/Node.cpp.obj"
+  "CMakeFiles/untitled3.dir/main.cpp.obj"
+  "libuntitled3.dll.a"
+  "untitled3.exe"
+  "untitled3.exe.manifest"
   "untitled3.pdb"
 )
 
