@@ -7,6 +7,7 @@ Edge::Edge(Node *from, Node *to){
 }
 
 Edge::Edge(Node *from, Node *to, int weight){
-    Edge(from, to);
+    this->from = from;
+    this->to = to;
     this->weight = weight;
 }

@@ -1,15 +1,17 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/20112/Desktop/wasalny/main.cpp" "C:/Users/20112/Desktop/wasalny/cmake-build-debug/CMakeFiles/untitled3.dir/main.cpp.obj"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/media/hazem/projects/wasalny/graphStructure/Edge.cpp" "CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o" "gcc" "CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o.d"
+  "/media/hazem/projects/wasalny/graphStructure/Graph.cpp" "CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o" "gcc" "CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o.d"
+  "/media/hazem/projects/wasalny/graphStructure/Node.cpp" "CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o" "gcc" "CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o.d"
+  "/media/hazem/projects/wasalny/main.cpp" "CMakeFiles/untitled3.dir/main.cpp.o" "gcc" "CMakeFiles/untitled3.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.
