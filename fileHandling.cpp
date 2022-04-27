@@ -63,9 +63,8 @@ int strToInt(string& str)
 }
 
 
-string getRawString(string url)
+string getRawStringFromFile(string url)
 {
-
     cout <<  "The full file path is : " << url << endl;
     string data_string , temp_input;
 
@@ -91,27 +90,6 @@ string getRawString(string url)
         return "404";
     }
 }
-string updateUserData(string new_data , string user_id)
-{
-    string full_path = fixed_file_path + user_id + ".csv";
-    cout <<  "The full file path is :\n" << full_path << endl;
-
-    fstream csv_file;
-    csv_file.open(full_path);
-
-    if (!csv_file.fail())
-    {
-        csv_file << user_id;
-        csv_file.close();
-    }
-    else
-    {
-        /// in case there is an error while opening the file
-        cerr << "Error occurred during writing in the file , Status : 404\n";
-        return "404";
-    }
-
-}
 
 string getUrlForGraph(string& user_id , string& graph_id )
 {
@@ -121,7 +99,7 @@ string getUrlForGraph(string& user_id , string& graph_id )
 Graph getUserGraph(string user_id , string graph_id )
 {
 
-    string graph_string =  getRawString(getUrlForGraph(user_id, graph_id));
+    string graph_string = getRawStringFromFile(getUrlForGraph(user_id, graph_id));
     unordered_map<int,unordered_map<int,string>> splitted_graph;
 
     csvStringToMap(splitted_graph,graph_string);
@@ -161,3 +139,42 @@ Graph getUserGraph(string user_id , string graph_id )
     return user_graph;
 }
 
+void writeRowStringToFile(string user_id , string graph_id , string dataString)
+{
+    string url = getUrlForGraph(user_id, graph_id);
+    cout <<  "The full file path is : " << url << endl;
+
+    ofstream  csv_file(url);
+
+    cout << "File was opened successfully\n";
+
+    csv_file << dataString;
+    csv_file.close();
+
+    cout << "Data was written successfully\n";
+}
+
+void createGraphForUser(string user_id , string graph_id , Graph graph)
+{
+
+    cout << "Creating graph csv string\n";
+    string graphCsvString = "";
+
+    graphCsvString += graph.isDirected ? '1' : '0';
+    graphCsvString += ',';
+    graphCsvString += graph.isWeighted ? '1' : '0';
+    graphCsvString += '\n';
+
+    graphCsvString += to_string(graph.nodes.size());
+    graphCsvString += ',';
+    graphCsvString += to_string(graph.edges.size());
+    graphCsvString += '\n';
+
+    for (auto i : graph.edges)
+    {
+        graphCsvString += i.from->label + ',' + i.to->label + ',' + to_string(i.weight) + '\n';
+    }
+
+    cout << "Graph csv string created successfully : \n" << graphCsvString << '\n';
+    writeRowStringToFile(user_id , graph_id ,graphCsvString );
+}
