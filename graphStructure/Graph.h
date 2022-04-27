@@ -7,14 +7,14 @@ using namespace std;
 class Node;
 class Edge;
 
-class Graph{
+class Graph {
 public:
-    bool isDirected, isWeighted;
     int nodeCount;
-    vector<Edge> edges;
     set<Node*> nodes;
+    vector<Edge> edges;
     map<string, int> ids;
     vector<string> nodeLabels;
+    bool isDirected, isWeighted;
 
     Graph(bool isDirected, bool isWeighted);
     void addNode(Node *node);

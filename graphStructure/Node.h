@@ -3,7 +3,7 @@
 using namespace std;
 class Node;
 
-class Node{
+class Node {
 public:
     int id;
     string label;

@@ -4,16 +4,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isDirected, isWeighted;
-string from, to;
 int weight;
+string from, to;
+bool isDirected, isWeighted;
 
-int main(){
+int main()
+{
     cin >> isDirected >> isWeighted;
 
     Graph g = Graph(isDirected, isWeighted);
 
-    if(!isWeighted){
+    if(!isWeighted) {
         while(cin >> from){
             cin >> to;
             if(from == "-1")
@@ -26,7 +27,7 @@ int main(){
             cout << "here" << endl;
         }
     }
-    else{
+    else {
         while(cin >> from >> to >> weight){
 
         }
@@ -34,7 +35,7 @@ int main(){
 
     cout << "out" << endl;
 
-    for(auto i : g.edges){
+    for(auto i: g.edges) {
         cout << i.from->label << " " << i.to->label << endl;
     }
 }

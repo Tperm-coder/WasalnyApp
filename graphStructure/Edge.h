@@ -3,12 +3,14 @@
 #include "Graph.h"
 #include <bits/stdc++.h>
 using namespace std;
+
 class Node;
 
-class Edge{
+class Edge {
 public:
-    Node *from, *to;
     int weight;
+    Node *from, *to;
+
     Edge(Node *from, Node *to);
     Edge(Node *from, Node *to, int weight);
 };

@@ -22,7 +22,6 @@ void Graph::addEdge(Edge edge)
 
 void Graph::addNode(Node *node)
 {
-
     node->id = nodeCount++;
     ids[node->label] = node->id;
 
