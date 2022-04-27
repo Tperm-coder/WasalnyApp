@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/189/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/hazem/clion-2021.3.4/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/189/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/hazem/clion-2021.3.4/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp"
+CMAKE_SOURCE_DIR = /media/hazem/projects/wasalny
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug"
+CMAKE_BINARY_DIR = /media/hazem/projects/wasalny/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/untitled3.dir/depend.make
@@ -72,58 +72,58 @@ include CMakeFiles/untitled3.dir/flags.make
 CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o: CMakeFiles/untitled3.dir/flags.make
 CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o: ../graphStructure/Node.cpp
 CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o: CMakeFiles/untitled3.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o -MF CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o.d -o CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o -c "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Node.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/hazem/projects/wasalny/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o -MF CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o.d -o CMakeFiles/untitled3.dir/graphStructure/Node.cpp.o -c /media/hazem/projects/wasalny/graphStructure/Node.cpp
 
 CMakeFiles/untitled3.dir/graphStructure/Node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled3.dir/graphStructure/Node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Node.cpp" > CMakeFiles/untitled3.dir/graphStructure/Node.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/hazem/projects/wasalny/graphStructure/Node.cpp > CMakeFiles/untitled3.dir/graphStructure/Node.cpp.i
 
 CMakeFiles/untitled3.dir/graphStructure/Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled3.dir/graphStructure/Node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Node.cpp" -o CMakeFiles/untitled3.dir/graphStructure/Node.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/hazem/projects/wasalny/graphStructure/Node.cpp -o CMakeFiles/untitled3.dir/graphStructure/Node.cpp.s
 
 CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o: CMakeFiles/untitled3.dir/flags.make
 CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o: ../graphStructure/Edge.cpp
 CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o: CMakeFiles/untitled3.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o -MF CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o.d -o CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o -c "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Edge.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/hazem/projects/wasalny/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o -MF CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o.d -o CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o -c /media/hazem/projects/wasalny/graphStructure/Edge.cpp
 
 CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Edge.cpp" > CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/hazem/projects/wasalny/graphStructure/Edge.cpp > CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.i
 
 CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Edge.cpp" -o CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/hazem/projects/wasalny/graphStructure/Edge.cpp -o CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.s
 
 CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o: CMakeFiles/untitled3.dir/flags.make
 CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o: ../graphStructure/Graph.cpp
 CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o: CMakeFiles/untitled3.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o -MF CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o.d -o CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o -c "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Graph.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/hazem/projects/wasalny/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o -MF CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o.d -o CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o -c /media/hazem/projects/wasalny/graphStructure/Graph.cpp
 
 CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Graph.cpp" > CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/hazem/projects/wasalny/graphStructure/Graph.cpp > CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.i
 
 CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Graph.cpp" -o CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/hazem/projects/wasalny/graphStructure/Graph.cpp -o CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.s
 
 CMakeFiles/untitled3.dir/main.cpp.o: CMakeFiles/untitled3.dir/flags.make
 CMakeFiles/untitled3.dir/main.cpp.o: ../main.cpp
 CMakeFiles/untitled3.dir/main.cpp.o: CMakeFiles/untitled3.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/untitled3.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/untitled3.dir/main.cpp.o -MF CMakeFiles/untitled3.dir/main.cpp.o.d -o CMakeFiles/untitled3.dir/main.cpp.o -c "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/hazem/projects/wasalny/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/untitled3.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/untitled3.dir/main.cpp.o -MF CMakeFiles/untitled3.dir/main.cpp.o.d -o CMakeFiles/untitled3.dir/main.cpp.o -c /media/hazem/projects/wasalny/main.cpp
 
 CMakeFiles/untitled3.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled3.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/main.cpp" > CMakeFiles/untitled3.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/hazem/projects/wasalny/main.cpp > CMakeFiles/untitled3.dir/main.cpp.i
 
 CMakeFiles/untitled3.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled3.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/main.cpp" -o CMakeFiles/untitled3.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/hazem/projects/wasalny/main.cpp -o CMakeFiles/untitled3.dir/main.cpp.s
 
 # Object files for target untitled3
 untitled3_OBJECTS = \
@@ -141,7 +141,7 @@ untitled3: CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o
 untitled3: CMakeFiles/untitled3.dir/main.cpp.o
 untitled3: CMakeFiles/untitled3.dir/build.make
 untitled3: CMakeFiles/untitled3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable untitled3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/hazem/projects/wasalny/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable untitled3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled3.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +153,6 @@ CMakeFiles/untitled3.dir/clean:
 .PHONY : CMakeFiles/untitled3.dir/clean
 
 CMakeFiles/untitled3.dir/depend:
-	cd "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp" "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp" "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug" "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug" "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug/CMakeFiles/untitled3.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /media/hazem/projects/wasalny/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/hazem/projects/wasalny /media/hazem/projects/wasalny /media/hazem/projects/wasalny/cmake-build-debug /media/hazem/projects/wasalny/cmake-build-debug /media/hazem/projects/wasalny/cmake-build-debug/CMakeFiles/untitled3.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/untitled3.dir/depend
 
