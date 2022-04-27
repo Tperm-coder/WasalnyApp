@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug",
-		"source" : "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp"
+		"build" : "/media/hazem/projects/wasalny/cmake-build-debug",
+		"source" : "/media/hazem/projects/wasalny"
 	},
 	"version" : 
 	{
