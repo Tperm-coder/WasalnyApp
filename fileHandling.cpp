@@ -48,14 +48,14 @@ void csvStringToMap(unordered_map<int,unordered_map<int,string>>& mp , string& c
     splitFromString(mp,csv_string,'\n',',');
 }
 
-int charToInt_to_int(char c)
+int charToInt(char c)
 {
     return (c - '0');
 }
 
 int strToInt(string& str)
 {
-    if (str.length() == 1) { return charToInt_to_int(str[0]); }
+    if (str.length() == 1) { return charToInt(str[0]); }
     stringstream ans(str);
     int x = 0;
     ans >> x;
@@ -139,18 +139,20 @@ Graph getUserGraph(string user_id , string graph_id )
 
     for (int i = 3 ; i <= 2 + nodes_num ; i++)
     {
-        Node fromNode = Node(splitted_graph[i][1]);
-        Node toNode = Node(splitted_graph[i][2]);
-        user_graph.addNode(fromNode);
-        user_graph.addNode(toNode);
+        Node * fp = new Node(splitted_graph[i][1]);
+        Node * tp = new Node(splitted_graph[i][2]);
+
+        user_graph.addNode(fp);
+        user_graph.addNode(tp);
+
         if (isWeighted)
         {
-            Edge curr_edge = Edge(&fromNode,&toNode,strToInt(splitted_graph[i][3]));
+            Edge curr_edge = Edge(fp,tp,strToInt(splitted_graph[i][3]));
             user_graph.addEdge(curr_edge);
         }
         else
         {
-            Edge curr_edge = Edge(&fromNode,&toNode);
+            Edge curr_edge = Edge(fp,tp);
             user_graph.addEdge(curr_edge);
         }
     }

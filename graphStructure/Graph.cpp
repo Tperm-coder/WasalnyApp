@@ -1,23 +1,32 @@
 #include "Graph.h"
 
-Graph::Graph(bool isDirected, bool isWeighted){
+Graph::Graph(bool isDirected, bool isWeighted)
+{
     this->isDirected = isDirected;
     this->isWeighted = isWeighted;
+
+    nodeCount = 0;
+    nodeLabels = {};
+    edges = {};
+    nodes = {};
 }
 
-void Graph::addEdge(Edge edge){
+void Graph::addEdge(Edge edge)
+{
     edges.emplace_back(edge);
-    Node *from = edge.from, *to = edge.to;
-    int weight = edge.weight;
 
-    from->links.insert(make_pair(to, weight));
+    edge.from->links.insert(make_pair(edge.to, edge.weight));
     if(!Graph::isDirected)
-        to->links.insert(make_pair(from, weight));
+        edge.to->links.insert(make_pair(edge.from, edge.weight));
 }
 
-void Graph::addNode(Node &node){
-    node.id = nodeCount++;
-    ids[node.label] = node.id;
-    nodeLabels.emplace_back(node.label);
+void Graph::addNode(Node *node)
+{
+
+    node->id = nodeCount++;
+    ids[node->label] = node->id;
+
+    nodeLabels.push_back(node->label);
+    nodes.insert(node);
 }
 

@@ -10,4 +10,6 @@ public:
     set<pair<Node*, int>> links;
 
     Node(string label);
+
+    bool operator == (const Node* n);
 };
