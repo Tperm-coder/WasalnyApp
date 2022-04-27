@@ -1,5 +1,4 @@
 /home/hazem/clion-2021.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /media/hazem/projects/wasalny -B /media/hazem/projects/wasalny/cmake-build-debug
--- Found SFML 2.5.1 in /usr/lib/x86_64-linux-gnu/cmake/SFML
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /media/hazem/projects/wasalny/cmake-build-debug

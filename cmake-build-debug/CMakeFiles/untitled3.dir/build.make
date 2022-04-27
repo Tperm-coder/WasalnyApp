@@ -140,10 +140,6 @@ untitled3: CMakeFiles/untitled3.dir/graphStructure/Edge.cpp.o
 untitled3: CMakeFiles/untitled3.dir/graphStructure/Graph.cpp.o
 untitled3: CMakeFiles/untitled3.dir/main.cpp.o
 untitled3: CMakeFiles/untitled3.dir/build.make
-untitled3: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
-untitled3: /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1
-untitled3: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
-untitled3: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 untitled3: CMakeFiles/untitled3.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/hazem/projects/wasalny/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable untitled3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled3.dir/link.txt --verbose=$(VERBOSE)

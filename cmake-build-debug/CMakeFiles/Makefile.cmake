@@ -31,11 +31,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.3/CMakeSystem.cmake"
-  "/usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake"
-  "/usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake"
-  "/usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake"
-  "/usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake"
-  "/usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake"
   )
 
 # The corresponding makefile is:
