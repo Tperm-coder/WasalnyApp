@@ -1,4 +1,4 @@
-# Install script for directory: /media/hazem/projects/wasalny
+# Install script for directory: /home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/media/hazem/projects/wasalny/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

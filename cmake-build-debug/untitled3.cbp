@@ -8,102 +8,102 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/media/hazem/projects/wasalny/cmake-build-debug"/>
+				<Option working_dir="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled3">
-				<Option output="/media/hazem/projects/wasalny/cmake-build-debug/untitled3" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/media/hazem/projects/wasalny/cmake-build-debug"/>
+				<Option output="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug/untitled3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled3"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled3"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled3/fast">
-				<Option output="/media/hazem/projects/wasalny/cmake-build-debug/untitled3" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/media/hazem/projects/wasalny/cmake-build-debug"/>
+				<Option output="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug/untitled3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled3/fast"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled3/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/media/hazem/projects/wasalny/cmake-build-debug"/>
+				<Option working_dir="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/media/hazem/projects/wasalny/cmake-build-debug"/>
+				<Option working_dir="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/media/hazem/projects/wasalny/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/beevo/Desktop/CLion\ Projects/Deliver\ me/walasnyApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/media/hazem/projects/wasalny/graphStructure/Edge.cpp">
+		<Unit filename="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Edge.cpp">
 			<Option target="untitled3"/>
 		</Unit>
-		<Unit filename="/media/hazem/projects/wasalny/graphStructure/Edge.h">
+		<Unit filename="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Edge.h">
 			<Option target="untitled3"/>
 		</Unit>
-		<Unit filename="/media/hazem/projects/wasalny/graphStructure/Graph.cpp">
+		<Unit filename="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Graph.cpp">
 			<Option target="untitled3"/>
 		</Unit>
-		<Unit filename="/media/hazem/projects/wasalny/graphStructure/Graph.h">
+		<Unit filename="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Graph.h">
 			<Option target="untitled3"/>
 		</Unit>
-		<Unit filename="/media/hazem/projects/wasalny/graphStructure/Node.cpp">
+		<Unit filename="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Node.cpp">
 			<Option target="untitled3"/>
 		</Unit>
-		<Unit filename="/media/hazem/projects/wasalny/graphStructure/Node.h">
+		<Unit filename="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/graphStructure/Node.h">
 			<Option target="untitled3"/>
 		</Unit>
-		<Unit filename="/media/hazem/projects/wasalny/main.cpp">
+		<Unit filename="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/main.cpp">
 			<Option target="untitled3"/>
 		</Unit>
-		<Unit filename="/media/hazem/projects/wasalny/CMakeLists.txt">
+		<Unit filename="/home/beevo/Desktop/CLion Projects/Deliver me/walasnyApp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
