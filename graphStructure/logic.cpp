@@ -1,6 +1,8 @@
 #include "Graph.h"
 #include "Node.h"
 #include "Edge.h"
+#include "Bfs.cpp"
+#include "Bellman.cpp"
 #include "Dijkstra.cpp"
 #include <bits/stdc++.h>
 using namespace std;
@@ -15,7 +17,7 @@ int main()
     Graph g = Graph(isDirected, isWeighted);
 
     for (int i = 0; i < edges; i++) {
-        int weight;
+        int weight = 1;
         string from, to;
 
         cin >> from >> to;
@@ -29,10 +31,4 @@ int main()
         Edge e = Edge(u, v, weight);
         g.addEdge(e);
     }
-
-    Path *path = Dijkstra(g.nodes[0], g.nodes[nodes - 1]);
-
-    cout << path->shortestDistance << endl;
-    for (auto i: path->path)
-        cout << i->label << ' ';
 }

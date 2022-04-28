@@ -4,6 +4,8 @@
 
 class Node;
 
+const int N = 1e5 + 7, INF = 1e9;
+
 class Path {
 public:
     Node *from, *to;

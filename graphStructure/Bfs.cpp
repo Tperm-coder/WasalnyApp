@@ -2,38 +2,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-Path* Dijkstra(Node *from, Node *to) {
+Path* Bfs(Node *from, Node *to) {
+    queue<Node*> q;
     vector<Node*> parent(N);
     vector<int> cost(N, INF);
-    priority_queue<pair<int, Node*>> pq;
 
+    q.push(from);
     cost[from->id] = 0;
     parent[from->id] = NULL;
-    pq.emplace(0, from);
 
-    while(pq.size())
+    while(q.size())
     {
-        auto curNode = pq.top();
-        int curNodeCost = -curNode.first;
-        int curNodeId = curNode.second->id;
+        auto curNode = q.front();
+        int curNodeId = curNode->id;
+        int curNodeCost = cost[curNodeId];
 
         set<pair<Node*, int>>::iterator nextNode;
 
-        pq.pop();
+        q.pop();
 
-        if (curNodeCost > cost[curNodeId])
-            continue;
-
-        for(nextNode = curNode.second->links.begin(); nextNode != curNode.second->links.end(); nextNode++)
+        for(nextNode = curNode->links.begin(); nextNode != curNode->links.end(); nextNode++)
         {
+            int nextNodeCost = curNodeCost + 1;
             int nextNodeId = nextNode->first->id;
-            int nextNodeCost = nextNode->second + curNodeCost;
 
             if(nextNodeCost < cost[nextNodeId])
             {
+                parent[nextNodeId] = curNode;
                 cost[nextNodeId] = nextNodeCost;
-                parent[nextNodeId] = curNode.second;
-                pq.emplace(-cost[nextNodeId], nextNode->first);
+                q.emplace(nextNode->first);
             }
         }
     }

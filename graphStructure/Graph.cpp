@@ -15,10 +15,12 @@ Graph::Graph(bool isDirected, bool isWeighted)
 void Graph::addEdge(Edge edge)
 {
     edges.emplace_back(edge);
-
     edge.from->links.insert(make_pair(edge.to, edge.weight));
-    if(!Graph::isDirected)
+
+    if(!this->isDirected) {
+        edges.emplace_back(edge.to, edge.from, edge.weight);
         edge.to->links.insert(make_pair(edge.from, edge.weight));
+    }
 }
 
 Node* Graph::addNode(Node *node)
