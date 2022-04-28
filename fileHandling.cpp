@@ -124,8 +124,8 @@ Graph getUserGraph(string userId, string graphId)
         Node * fp = new Node(splittedGraph[i][1]);
         Node * tp = new Node(splittedGraph[i][2]);
 
-        userGraph.addNode(fp);
-        userGraph.addNode(tp);
+        fp = userGraph.addNode(fp);
+        tp = userGraph.addNode(tp);
 
         if (isWeighted)
         {
