@@ -9,7 +9,7 @@ class Node {
 public:
     int id;
     string label;
-    set<pair<Node*, int>> links;
+    set<pair<Node*, Edge*>> links;
 
     Node(string label);
     bool operator == (const Node* node);

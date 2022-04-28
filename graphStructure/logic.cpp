@@ -28,7 +28,7 @@ int main()
 
         u = g.addNode(u);
         v = g.addNode(v);
-        Edge e = Edge(u, v, weight);
+        Edge *e = new Edge(u, v, weight);
         g.addEdge(e);
     }
 }

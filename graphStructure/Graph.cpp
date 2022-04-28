@@ -12,14 +12,14 @@ Graph::Graph(bool isDirected, bool isWeighted)
     nodes = {};
 }
 
-void Graph::addEdge(Edge edge)
+void Graph::addEdge(Edge *edge)
 {
-    edges.emplace_back(edge);
-    edge.from->links.insert(make_pair(edge.to, edge.weight));
+    edges.emplace_back(*edge, edge);
+    edge->from->links.insert({edge->to, edge});
 
     if(!this->isDirected) {
-        edges.emplace_back(edge.to, edge.from, edge.weight);
-        edge.to->links.insert(make_pair(edge.from, edge.weight));
+        edges.push_back({{edge->to, edge->from, edge->weight}, edge});
+        edge->to->links.insert({edge->from, edge});
     }
 }
 

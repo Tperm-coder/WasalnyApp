@@ -6,6 +6,7 @@ Path* Bfs(Node *from, Node *to) {
     queue<Node*> q;
     vector<Node*> parent(N);
     vector<int> cost(N, INF);
+    vector<pair<Node*, pair<Edge*, int>>> algoPath;
 
     q.push(from);
     cost[from->id] = 0;
@@ -17,9 +18,11 @@ Path* Bfs(Node *from, Node *to) {
         int curNodeId = curNode->id;
         int curNodeCost = cost[curNodeId];
 
-        set<pair<Node*, int>>::iterator nextNode;
+        set<pair<Node*, Edge*>>::iterator nextNode;
 
         q.pop();
+
+        algoPath.push_back({curNode, {NULL, 0}});
 
         for(nextNode = curNode->links.begin(); nextNode != curNode->links.end(); nextNode++)
         {
@@ -31,6 +34,7 @@ Path* Bfs(Node *from, Node *to) {
                 parent[nextNodeId] = curNode;
                 cost[nextNodeId] = nextNodeCost;
                 q.emplace(nextNode->first);
+                algoPath.push_back({NULL, {nextNode->second, nextNodeCost}});
             }
         }
     }
@@ -47,6 +51,6 @@ Path* Bfs(Node *from, Node *to) {
     if (cost[to->id] == INF)
         cost[to->id] = -1;
 
-    return new Path(from, to, path, cost[to->id]);
+    return new Path(from, to, path, cost[to->id], algoPath);
 }
 

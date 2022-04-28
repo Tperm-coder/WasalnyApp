@@ -11,8 +11,9 @@ public:
     Node *from, *to;
     vector<Node*> path;
     int shortestDistance;
+    vector<pair<Node*, pair<Edge*, int>>> algoPath;
 
-    Path(Node *from, Node *to, vector<Node*> path, int shortestDistance);
+    Path(Node *from, Node *to, vector<Node*> path, int shortestDistance, vector<pair<Node*, pair<Edge*, int>>> algoPath);
 };
 
 
