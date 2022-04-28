@@ -7,6 +7,7 @@ int main()
     RenderWindow window(VideoMode(800,800), "Graph Visualizer");
     bool canPressL = true, canPressR = true;
     vector<CircleShape>nodes;
+    window.setFramerateLimit(60);
     while (window.isOpen())
     {
         Event event{};
@@ -23,7 +24,6 @@ int main()
                 node.setOutlineThickness(5);
                 node.setOrigin (50,50);
                 node.setPosition((float)Mouse::getPosition(window).x, (float)Mouse::getPosition(window).y);
-                window.draw(node);
                 nodes.push_back(node);
                 cout << "Drawn\n";
             }
@@ -48,6 +48,9 @@ int main()
             if(!Mouse::isButtonPressed(Mouse::Right))
                 canPressR = true;
         }
+        window.clear();
+        for(auto i : nodes)
+            window.draw(i);
         window.display();
     }
 
