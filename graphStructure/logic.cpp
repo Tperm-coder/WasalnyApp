@@ -1,7 +1,7 @@
 #include "Graph.h"
 #include "Node.h"
 #include "Edge.h"
-#include "Dijkstra.h"
+#include "Dijkstra.cpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -21,18 +21,18 @@ int main()
         cin >> from >> to;
         if (isWeighted)
             cin >> weight;
+
         Node *u = new Node(from), *v = new Node(to);
+
         u = g.addNode(u);
         v = g.addNode(v);
         Edge e = Edge(u, v, weight);
         g.addEdge(e);
     }
 
-    cerr << g.nodes.size() << "\n";
-    for(auto i : g.nodes[0]->links)
-    {
-        cout << i.first->label << " " << i.second << "\n";
-    }
-    Dijkstra d = Dijkstra(g.nodes[0],g.nodes[2]);
-    cout << d.cst[2] << "\n";
+    Path *path = Dijkstra(g.nodes[0], g.nodes[nodes - 1]);
+
+    cout << path->shortestDistance << endl;
+    for (auto i: path->path)
+        cout << i->label << ' ';
 }

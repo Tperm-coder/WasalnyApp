@@ -5,7 +5,7 @@ Node::Node(string label)
     this->label = label;
 }
 
-bool Node::operator == (const Node *n)
+bool Node::operator == (const Node *node)
 {
-    return label == n->label;
+    return label == node->label;
 }

@@ -10,11 +10,12 @@ class Edge;
 class Graph {
 public:
     int nodeCount;
-    vector<Node*> nodes;
     vector<Edge> edges;
+    vector<Node*> nodes;
     map<string, int> ids;
     vector<string> nodeLabels;
     bool isDirected, isWeighted;
+
     Graph(bool isDirected, bool isWeighted);
     Node* addNode(Node *node);
     void addEdge(Edge edge);
