@@ -7,28 +7,149 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-    int nodes, edges;
-    bool isDirected, isWeighted;
+int nodes, edges;
+bool isDirected, isWeighted;
 
-    cin >> isDirected >> isWeighted >> nodes >> edges;
+Graph g = Graph(0, 0);
 
-    Graph g = Graph(isDirected, isWeighted);
+bool isNumeric(const string& response) {
+    return all_of(response.begin(), response.end(), [](char c) {
+        return isdigit(c);
+    });
+}
+
+string getOrder(int order) {
+    if (order == 1)
+        return "1st";
+    else if (order == 2)
+        return "2nd";
+    else if (order == 3)
+        return "3rd";
+    else
+        return to_string(order) + "th";
+}
+
+string ask(const string& question) {
+    cout << question;
+    string response;
+    getline(cin, response);
+    return response;
+}
+
+int yesNoQuestion(const string& question) {
+    string response = "*";
+    while (response != "y" && response != "n")
+        response = ask(question + " (y/n): ");
+    if (response == "y")
+        return 1;
+    else if (response == "n")
+        return 0;
+    else
+        return -1;
+}
+
+int numberQuestion(const string& question) {
+    string response = "*";
+    while (!isNumeric(response))
+        response = ask(question + ' ');
+    return stoi(response);
+}
+
+Node* findNode(string label) {
+    if (!g.ids.count(label)) {
+        cout << "Please enter a valid node" << endl;
+        return NULL;
+    }
+    return g.nodes[g.ids[label]];
+}
+
+Node* getNode(const string& question) {
+    string label = "";
+    while (label == "" || findNode(label) == NULL)
+        label = ask(question);
+    return findNode(label);
+}
+
+void loadGraph() {
+
+}
+
+void createGraph() {
+    isDirected = yesNoQuestion("Are the edges directed?");
+    isWeighted = yesNoQuestion("Are the edges weighted?");
+
+    nodes = numberQuestion("Enter the number of nodes:");
+    edges = numberQuestion("Enter the number of edges:");
+
+    g = Graph(isDirected, isWeighted);
+
+    for (int i = 0; i < nodes; i++) {
+        string label;
+        label = ask("Enter the " + getOrder(i + 1) + " node's label: ");
+        Node* node = new Node(label);
+        g.addNode(node);
+    }
 
     for (int i = 0; i < edges; i++) {
         int weight = 1;
         string from, to;
 
-        cin >> from >> to;
+        cout << getOrder(i + 1) + " edge:" << endl;
+
+        Node *u = NULL;
+        while (u == NULL) {
+            from = ask("Enter the 1st node: ");
+            u = findNode(from);
+        }
+
+        Node *v = NULL;
+        while (v == NULL) {
+            to = ask("Enter the 2nd node: ");
+            v = findNode(to);
+        }
+
         if (isWeighted)
-            cin >> weight;
+            weight = numberQuestion("Enter the weight of the edge: ");
 
-        Node *u = new Node(from), *v = new Node(to);
-
-        u = g.addNode(u);
-        v = g.addNode(v);
         Edge *e = new Edge(u, v, weight);
         g.addEdge(e);
+    }
+}
+
+int main()
+{
+    int loadExistingGraph = -1;
+    while (loadExistingGraph == -1)
+        loadExistingGraph = yesNoQuestion("Load existing graph?");
+
+    if (loadExistingGraph)
+        loadGraph();
+    else
+        createGraph();
+
+    while (1) {
+        cout << "Choose the source and destination nodes" << endl;
+        Node* from = getNode("Enter the source node: ");
+        Node* to = getNode("Enter the destination node: ");
+
+        bool algoOptions[] = {0, 1, 1, 0};
+        string question = "Which algorithm do you want to use?\n(1)Dijkstra\n(2)Bellman\n";
+
+        if (!isWeighted)
+            question += "(3)Bfs\n", algoOptions[3] = 1;
+
+        int algo = 0;
+        while (algo < 1 || algo > 3 || !algoOptions[algo])
+            algo = numberQuestion(question);
+
+        Path *path;
+        if (algo == 1)
+            path = Dijkstra(from, to);
+        else if (algo == 2)
+            path = Bellman(from, to, &g);
+        else
+            path = Bfs(from, to);
+
+        path->Display();
     }
 }
