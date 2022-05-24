@@ -1,8 +1,11 @@
 #include <bits/stdc++.h>
 #include <fstream>
+#include <filesystem>
 #include "graphStructure/Graph.h"
 
 using namespace std;
+namespace fs = std::filesystem;
+
 const string fixedFilePath = "../dataLayer/UsersInfo/"; // relative to the exe file
 
 class Node;
@@ -95,15 +98,28 @@ string getRawStringFromFile(string url)
     }
 }
 
-string getUrlForGraph(string& userId, string& graphId)
+string getUrlForGraph(string& graphId)
 {
-    return fixedFilePath + userId + '/' + "savedGraphs/" + graphId + ".csv";
+    return fixedFilePath + "Admin" + '/' + "savedGraphs/" + graphId + ".csv";
 }
 
-Graph getUserGraph(string userId, string graphId)
+vector<string> getCurrentGraphNames()
 {
+    vector<string> graphNames;
+    string path = "dataLayer/UsersInfo/Admin/savedGraphs";
+    for (const auto & entry : fs::directory_iterator(path))
+    {
+        string fileName = entry.path().filename().string();
+        fileName.erase(fileName.end() - 4, fileName.end());
+        graphNames.push_back(fileName);
+    }
 
-    string graphString = getRawStringFromFile(getUrlForGraph(userId, graphId));
+    return graphNames;
+}
+
+Graph getUserGraph(string graphId)
+{
+    string graphString = getRawStringFromFile(getUrlForGraph(graphId));
     unordered_map<int,unordered_map<int,string>> splittedGraph;
 
     csvStringToMap(splittedGraph, graphString);
@@ -143,9 +159,9 @@ Graph getUserGraph(string userId, string graphId)
     return userGraph;
 }
 
-void writeRowStringToFile(string userId, string graphId, string dataString)
+void writeRowStringToFile(string graphId, string dataString)
 {
-    string url = getUrlForGraph(userId, graphId);
+    string url = getUrlForGraph(graphId);
     cout <<  "The full file path is : " << url << endl;
 
     ofstream csvFile(url);
@@ -158,9 +174,8 @@ void writeRowStringToFile(string userId, string graphId, string dataString)
     cout << "Data was written successfully\n";
 }
 
-void createGraphForUser(string userId, string graphId, Graph graph)
+void createGraphForUser(string graphId, Graph graph)
 {
-
     cout << "Creating graph csv string\n";
     string graphCsvString = "";
 
@@ -180,5 +195,5 @@ void createGraphForUser(string userId, string graphId, Graph graph)
     }
 
     cout << "Graph csv string created successfully : \n" << graphCsvString << '\n';
-    writeRowStringToFile(userId , graphId , graphCsvString );
+    writeRowStringToFile(graphId , graphCsvString);
 }
