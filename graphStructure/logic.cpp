@@ -16,9 +16,16 @@ Graph g = Graph(0, 0);
 
 bool isNumeric(const string& response)
 {
-    return all_of(response.begin(), response.end(), [](char c) {
-        return isdigit(c);
-    });
+    string responseHolder = response;
+    if (responseHolder[0] == '-')
+        responseHolder.erase(0);
+
+    for (int i = 0; i < responseHolder.size(); i++) {
+        if (!isdigit(responseHolder[i]))
+            return 0;
+    }
+
+    return 1;
 }
 
 string getOrder(int order)
@@ -96,11 +103,19 @@ void getShortestPath()
     Node* from = getNode("Enter the source node: ");
     Node* to = getNode("Enter the destination node: ");
 
+    if (g.countNegative) {
+        cout << "Using Bellman:\n";
+        Path *path = Bellman(from, to, &g);
+        if (path != NULL)
+            path->Display();
+        return;
+    }
+
     bool algoOptions[] = {0, 1, 1, 0};
-    question = "Which algorithm do you want to use?\n(1)Dijkstra\n(2)Bellman\n";
+    question = "Which algorithm do you want to use?\n(1) Dijkstra\n(2) Bellman\n";
 
     if (!isWeighted)
-        question += "(3)Bfs\n", algoOptions[3] = 1;
+        question += "(3) Bfs\n", algoOptions[3] = 1;
 
     int algo = 0;
     while (algo < 1 || algo > 3 || !algoOptions[algo])
@@ -119,18 +134,18 @@ void getShortestPath()
 void updateGraph()
 {
     question = "How would you like to update the graph?\n"
-               "(1) Display graph\n"
-               "(2) Add a node\n"
-               "(3) Add an edge\n"
-               "(4) Update a node's name\n";
+               "(1) Add a node\n"
+               "(2) Add an edge\n"
+               "(3) Update a node's name\n";
 
     if(isWeighted)
-        question += "(5) Update an edge's weight\n";
+        question += "(4) Update an edge's weight\n";
 
-    int response = 0, limit = 4 + isWeighted;
+    int response = 0, limit = 3 + isWeighted;
     while (response < 1 || response > limit)
         response = numberQuestion(question);
-    if(response == 4)
+
+    if(response == 3)
     {
         cout << "Choose which node to update its name:\n";
         for(int i = 0; i < g.nodeLabels.size(); i++)
@@ -151,13 +166,13 @@ void updateGraph()
         g.ids.erase(g.nodeLabels[response]);
         g.nodeLabels[response] = newName;
     }
-    else if(response == 5)
+    else if(response == 4)
     {
         cout << "Choose which edge to update its weight:\n";
         for(int i = 0; i < g.edges.size(); i += (!isDirected) + 1)
         {
             auto edge = g.edges[i].first;
-            cout << i + 1 << ": " << edge.from << ' ' << edge.to;
+            cout << (i + 1) / 2 + 1 << ": " << edge.from->label << ' ' << edge.to->label;
             if(isWeighted)
                 cout << ' ' << edge.weight;
             cout << '\n';
@@ -166,6 +181,11 @@ void updateGraph()
         cin >> response;
         response--;
         int newWeight = numberQuestion("Enter the new weight: ");
+
+        if (g.edges[response].first.weight < 0)
+            g.countNegative--;
+        if (newWeight < 0)
+            g.countNegative++;
 
         if(!isDirected)
         {
@@ -178,14 +198,14 @@ void updateGraph()
             g.edges[response].second->weight = newWeight;
         }
     }
-    else if(response == 2)
+    else if(response == 1)
     {
         string label;
         label = ask("Enter the new node's label: ");
         Node* node = new Node(label);
         g.addNode(node);
     }
-    else if(response == 3)
+    else if(response == 2)
     {
         int weight = 1;
         string from, to;
@@ -208,15 +228,10 @@ void updateGraph()
         Edge *e = new Edge(u, v, weight);
         g.addEdge(e);
     }
-    else if(response == 1)
-    {
-        for(auto i : g.nodeLabels)
-            cout << i << ' ';
-        cout << endl;
-    }
     deleteGraph(graphName);
     createGraphForUser(graphName, g);
 }
+
 void createGraph()
 {
     isDirected = yesNoQuestion("Are the edges directed?");
@@ -231,6 +246,12 @@ void createGraph()
     {
         string label;
         label = ask("Enter the " + getOrder(i + 1) + " node's label: ");
+
+        while (find(g.nodeLabels.begin(), g.nodeLabels.end(), label) != g.nodeLabels.end()) {
+            cout << "Node already exists!\n";
+            label = ask("Enter the " + getOrder(i + 1) + " node's label: ");
+        }
+
         Node* node = new Node(label);
         g.addNode(node);
     }
@@ -263,8 +284,24 @@ void createGraph()
     createGraphForUser(graphName, g);
 }
 
-int main()
-{
+void displayGraph() {
+    cout << "Node labels: \n";
+    for(auto i : g.nodeLabels)
+        cout << i << ' ';
+    cout << '\n';
+
+    cout << "Edges: \n";
+    for(int i = 0; i < g.edges.size(); i += (!isDirected) + 1)
+    {
+        auto edge = g.edges[i].first;
+        cout << edge.from->label << ' ' << edge.to->label;
+        if(isWeighted)
+            cout << ' ' << edge.weight;
+        cout << '\n';
+    }
+}
+
+void init() {
     auto graphNames = getCurrentGraphNames();
 
     int loadExistingGraph = -1;
@@ -279,6 +316,11 @@ int main()
             cout << i + 1 << ": " << graphNames[i] << '\n';
 
         cin >> response;
+        while (response < 1 || response > graphNames.size()) {
+            cout << "Graph not found!\n";
+            cin >> response;
+        }
+
         loadGraph(graphNames[response - 1]);
     }
     else
@@ -286,18 +328,29 @@ int main()
         graphName = ask("Enter the graph name: ");
         createGraph();
     }
+}
+
+int main()
+{
+    init();
+
     while (1)
     {
         question = "What do you want to do with the current graph?\n"
-                   "(1)Delete current graph\n"
-                   "(2)Update current graph\n"
-                   "(3)Get shortest path between two nodes\n";
+                   "(1) Display current graph\n"
+                   "(2) Delete current graph\n"
+                   "(3) Update current graph\n"
+                   "(4) Get shortest path between two nodes\n";
         int ans = numberQuestion(question);
-        if(ans == 1)
+        if (ans == 1)
+            displayGraph();
+        if(ans == 2) {
             deleteGraph(graphName);
-        else if(ans == 2)
-            updateGraph();
+            init();
+        }
         else if(ans == 3)
+            updateGraph();
+        else if(ans == 4)
             getShortestPath();
     }
 }

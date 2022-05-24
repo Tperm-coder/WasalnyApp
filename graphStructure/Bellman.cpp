@@ -22,6 +22,14 @@ Path* Bellman(Node *from, Node *to, Graph *graph) {
         }
     }
 
+    for (auto edge: graph->edges) {
+        int newCost = cost[edge.first.from->id] + edge.first.weight;
+        if (newCost < cost[edge.first.to->id]) {
+            cout << "Negative cycle detected!\n";
+            return NULL;
+        }
+    }
+
     vector<Node*> path;
     Node *curNode = to;
     while (parent[curNode->id] != NULL) {

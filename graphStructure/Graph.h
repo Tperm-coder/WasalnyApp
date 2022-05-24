@@ -12,14 +12,13 @@ public:
     int nodeCount;
     vector<Node*> nodes;
     map<string, int> ids;
+    int countNegative = 0;
     vector<string> nodeLabels;
     bool isDirected, isWeighted;
     vector<pair<Edge, Edge*>> edges;
 
     Graph(bool isDirected, bool isWeighted);
     Node* addNode(Node *node);
-    Node* deleteNode(Node *node);
     void addEdge(Edge *edge);
-    void deleteEdge(Edge *edge);
 };
 
