@@ -18,8 +18,8 @@ public:
 
     Graph(bool isDirected, bool isWeighted);
     Node* addNode(Node *node);
+    Node* deleteNode(Node *node);
     void addEdge(Edge *edge);
+    void deleteEdge(Edge *edge);
 };
-
-
 

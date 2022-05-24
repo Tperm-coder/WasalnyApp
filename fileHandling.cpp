@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 #include <fstream>
-#include <filesystem>
 #include <stdio.h>
 #include "graphStructure/Graph.h"
 
 using namespace std;
 
 const string fixedFilePath = "../dataLayer/UsersInfo/"; // relative to the exe file
+string graphNamesFileName = "graphName";
 
 class Node;
 class Edge;
@@ -103,20 +103,25 @@ string getUrlForGraph(string& graphId)
     return fixedFilePath + "Admin" + '/' + "savedGraphs/" + graphId + ".csv";
 }
 
+void splitToString(vector<string>& vec, string& str, char splitter)
+{
+    string one_word = "";
+    for (char c : str)
+    {
+        if (c == splitter) { vec.push_back(one_word); one_word = ""; }
+        else { one_word += c; }
+    }
+    vec.push_back(one_word);
+}
 vector<string> getCurrentGraphNames()
 {
+    string NamesString = getRawStringFromFile(getUrlForGraph(graphNamesFileName));
     vector<string> graphNames;
-    string path = "dataLayer/UsersInfo/Admin/savedGraphs";
-    for (const auto & entry : filesystem::directory_iterator(path))
-    {
-        string fileName = entry.path().filename().string();
-        fileName.erase(fileName.end() - 4, fileName.end());
-        graphNames.push_back(fileName);
-    }
+
+    splitToString(graphNames , NamesString, '\n');
 
     return graphNames;
 }
-
 
 
 Graph getUserGraph(string graphId)
@@ -147,12 +152,12 @@ Graph getUserGraph(string graphId)
 
         if (isWeighted)
         {
-            Edge currEdge = Edge(fp, tp, strToInt(splittedGraph[i][3]));
+            Edge* currEdge = new Edge(fp, tp, strToInt(splittedGraph[i][3]));
             userGraph.addEdge(currEdge);
         }
         else
         {
-            Edge currEdge = Edge(fp, tp);
+            Edge* currEdge = new Edge(fp, tp);
             userGraph.addEdge(currEdge);
         }
     }
@@ -193,14 +198,14 @@ void createGraphForUser(string graphId, Graph graph)
 
     for (auto i: graph.edges)
     {
-        graphCsvString += i.from->label + ',' + i.to->label + ',' + to_string(i.weight) + '\n';
+        graphCsvString += i.first.from->label + ',' + i.first.to->label + ',' + to_string(i.first.weight) + '\n';
     }
 
     cout << "Graph csv string created successfully : \n" << graphCsvString << '\n';
     writeRowStringToFile(graphId , graphCsvString);
 }
 
-void deleteGraph(stirng graphName)
+void deleteGraph(string graphName)
 {
-    const int result = remove(getUrlForGraph(graphName));
+
 }

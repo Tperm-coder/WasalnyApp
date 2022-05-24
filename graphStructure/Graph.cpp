@@ -7,7 +7,6 @@ Graph::Graph(bool isDirected, bool isWeighted)
 
     nodeCount = 0;
     nodeLabels = {};
-
     edges = {};
     nodes = {};
 }
@@ -36,4 +35,16 @@ Node* Graph::addNode(Node *node)
         node = nodes[ids[node->label]];
     return node;
 }
-
+Node* Graph::deleteNode(Node *node)
+{
+    if(!ids.count(node->label))
+    {
+        node->id = nodeCount++;
+        ids[node->label] = node->id;
+        nodeLabels.push_back(node->label);
+        nodes.push_back(node);
+    }
+    else
+        node = nodes[ids[node->label]];
+    return node;
+}
