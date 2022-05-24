@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 #include <fstream>
 #include <stdio.h>
@@ -17,7 +18,7 @@ void splitFromString(unordered_map<int,unordered_map<int,string>>& mp, string& s
     string oneD = "";
     int line = 1, cell;
 
-    cout << "Start Split successfully\n";
+//    cout << "Start Split successfully\n";
     str += firstSplitter;
     for (char c: str)
     {
@@ -44,7 +45,7 @@ void splitFromString(unordered_map<int,unordered_map<int,string>>& mp, string& s
         else
             oneD += c;
     }
-    cout << "End Split successfully\n";
+//    cout << "End Split successfully\n";
 }
 
 void csvStringToMap(unordered_map<int,unordered_map<int,string>>& mp, string& csvString)
@@ -70,7 +71,7 @@ int strToInt(string& str)
 
 string getRawStringFromFile(string url)
 {
-    cout <<  "The full file path is : " << url << endl;
+//    cout <<  "The full file path is : " << url << endl;
     string dataString, tempInput;
 
     fstream csvFile;
@@ -87,7 +88,7 @@ string getRawStringFromFile(string url)
         }
         csvFile.close();
 
-        cout << "The data was read successfully :\n" << dataString << '\n';
+//        cout << "The data was read successfully :\n" << dataString << '\n';
         return dataString;
     }
     else
@@ -111,8 +112,10 @@ void splitToString(vector<string>& vec, string& str, char splitter)
         if (c == splitter) { vec.push_back(one_word); one_word = ""; }
         else { one_word += c; }
     }
-    vec.push_back(one_word);
+    if(!one_word.empty())
+        vec.push_back(one_word);
 }
+
 vector<string> getCurrentGraphNames()
 {
     string NamesString = getRawStringFromFile(getUrlForGraph(graphNamesFileName));
@@ -128,7 +131,6 @@ Graph getUserGraph(string graphId)
 {
     string graphString = getRawStringFromFile(getUrlForGraph(graphId));
     unordered_map<int,unordered_map<int,string>> splittedGraph;
-
     csvStringToMap(splittedGraph, graphString);
 
     bool isDirected = false, isWeighted = false;
@@ -136,17 +138,14 @@ Graph getUserGraph(string graphId)
     isWeighted = (bool)strToInt(splittedGraph[1][2]);
 
     int nodesNum = strToInt(splittedGraph[2][1]);
-    int edgesNum = strToInt(splittedGraph[2][2]); //useless
+    int edgesNum = strToInt(splittedGraph[2][2]);
 
-
-    cout << "Graph data retrieved successfully\nCreating Graph object\n";
+//    cout << "Graph data retrieved successfully\nCreating Graph object\n";
     Graph userGraph = Graph(isDirected, isWeighted);
-
-    for (int i = 3; i <= 2 + nodesNum; i++)
+    for (int i = 3; i <= 2 + edgesNum; i++)
     {
         Node * fp = new Node(splittedGraph[i][1]);
         Node * tp = new Node(splittedGraph[i][2]);
-
         fp = userGraph.addNode(fp);
         tp = userGraph.addNode(tp);
 
@@ -159,31 +158,39 @@ Graph getUserGraph(string graphId)
         {
             Edge* currEdge = new Edge(fp, tp);
             userGraph.addEdge(currEdge);
+
         }
     }
-    cout << "Graph object created successfully\n";
-
+//    cout << "Graph object created successfully\n";
     return userGraph;
 }
 
 void writeRowStringToFile(string graphId, string dataString)
 {
     string url = getUrlForGraph(graphId);
-    cout <<  "The full file path is : " << url << endl;
-
     ofstream csvFile(url);
-
-    cout << "File was opened successfully\n";
 
     csvFile << dataString;
     csvFile.close();
-
-    cout << "Data was written successfully\n";
 }
+void addNewGraphName(string graphName)
+{
+    vector<string> graphNames = getCurrentGraphNames();
 
+    graphNames.push_back(graphName);
+
+    string newNamesString = "";
+    for (string name : graphNames)
+    {
+        newNamesString += name;
+        newNamesString += '\n';
+    }
+
+    writeRowStringToFile(graphNamesFileName, newNamesString);
+}
 void createGraphForUser(string graphId, Graph graph)
 {
-    cout << "Creating graph csv string\n";
+//    cout << "Creating graph csv string\n";
     string graphCsvString = "";
 
     graphCsvString += graph.isDirected ? '1' : '0';
@@ -191,21 +198,44 @@ void createGraphForUser(string graphId, Graph graph)
     graphCsvString += graph.isWeighted ? '1' : '0';
     graphCsvString += '\n';
 
-    graphCsvString += to_string(graph.nodes.size());
+    graphCsvString += to_string(graph.nodeLabels.size());
     graphCsvString += ',';
-    graphCsvString += to_string(graph.edges.size());
+    graphCsvString += to_string(graph.edges.size() / (graph.isDirected ? 1 : 2));
     graphCsvString += '\n';
 
-    for (auto i: graph.edges)
+    bool turn = !graph.isDirected;
+    for(auto i: graph.edges)
     {
+        if(!graph.isDirected)
+            turn ^= true;
+        if(turn)
+            continue;
         graphCsvString += i.first.from->label + ',' + i.first.to->label + ',' + to_string(i.first.weight) + '\n';
     }
 
-    cout << "Graph csv string created successfully : \n" << graphCsvString << '\n';
+    //cout << "Graph csv string created successfully : \n" << graphCsvString << '\n';
     writeRowStringToFile(graphId , graphCsvString);
+    addNewGraphName(graphId);
 }
 
 void deleteGraph(string graphName)
 {
+    vector<string> graphNames = getCurrentGraphNames();
 
+    vector<string> newNames;
+    for (string name : graphNames)
+    {
+        if (name != graphName)
+            newNames.push_back(name);
+    }
+
+    string newNamesString = "";
+    for (string name : newNames)
+    {
+        newNamesString += name;
+        newNamesString += '\n';
+    }
+
+    writeRowStringToFile(graphName, "");
+    writeRowStringToFile(graphNamesFileName, newNamesString);
 }
