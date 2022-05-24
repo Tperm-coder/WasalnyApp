@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 #include <fstream>
 #include <filesystem>
+#include <stdio.h>
 #include "graphStructure/Graph.h"
 
 using namespace std;
-namespace fs = std::filesystem;
 
 const string fixedFilePath = "../dataLayer/UsersInfo/"; // relative to the exe file
 
@@ -107,7 +107,7 @@ vector<string> getCurrentGraphNames()
 {
     vector<string> graphNames;
     string path = "dataLayer/UsersInfo/Admin/savedGraphs";
-    for (const auto & entry : fs::directory_iterator(path))
+    for (const auto & entry : filesystem::directory_iterator(path))
     {
         string fileName = entry.path().filename().string();
         fileName.erase(fileName.end() - 4, fileName.end());
@@ -116,6 +116,8 @@ vector<string> getCurrentGraphNames()
 
     return graphNames;
 }
+
+
 
 Graph getUserGraph(string graphId)
 {
@@ -196,4 +198,9 @@ void createGraphForUser(string graphId, Graph graph)
 
     cout << "Graph csv string created successfully : \n" << graphCsvString << '\n';
     writeRowStringToFile(graphId , graphCsvString);
+}
+
+void deleteGraph(stirng graphName)
+{
+    const int result = remove(getUrlForGraph(graphName));
 }
